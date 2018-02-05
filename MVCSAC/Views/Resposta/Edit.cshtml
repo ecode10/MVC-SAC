@@ -1,0 +1,61 @@
+﻿@model MVCSAC.Models.Resposta
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Resposta</legend>
+
+        @Html.HiddenFor(model => model.CHRes)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DESCRes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DESCRes)
+            @Html.ValidationMessageFor(model => model.DESCRes)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DTRes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DTRes)
+            @Html.ValidationMessageFor(model => model.DTRes)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CHUsu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CHUsu)
+            @Html.ValidationMessageFor(model => model.CHUsu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CHChamado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CHChamado)
+            @Html.ValidationMessageFor(model => model.CHChamado)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

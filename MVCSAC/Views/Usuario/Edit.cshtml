@@ -1,0 +1,62 @@
+﻿@model MVCSAC.Models.Usuario
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Usuario</legend>
+
+        @Html.HiddenFor(model => model.CHUsu)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NOUsu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NOUsu)
+            @Html.ValidationMessageFor(model => model.NOUsu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EMUsu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EMUsu)
+            @Html.ValidationMessageFor(model => model.EMUsu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DTNascUsu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DTNascUsu)
+            @Html.ValidationMessageFor(model => model.DTNascUsu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CHSite)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CHSite", (IEnumerable<SelectListItem>)ViewBag.ListSites, "-- Selecione --")
+            @*@Html.EditorFor(model => model.CHSite)*@
+            @Html.ValidationMessageFor(model => model.CHSite)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

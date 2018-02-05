@@ -1,0 +1,29 @@
+﻿@model MVCSAC.Models.Pais
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index", "Pais", FormMethod.Get,
+        new { id = "FormPaisID",
+              data_stateListAction = @Url.Action("SearchEstado") })) {
+    
+    <fieldset>
+        <legend>Pais</legend>
+        @Html.DropDownList("Paises", ViewBag.cmbPaises as SelectList,
+                "Selecione um Pais", new { id = "CHPais" })
+
+        <div id="EstadoDivID">
+            <label for="Estados">Estados</label>
+            <select id="EstadosID" name="Estados"></select>
+        </div>
+        <p>
+            <input type="submit" value="Submit" id="SubmitID" />
+        </p>
+    </fieldset>
+}
+
+<script src="@Url.Content("~/Scripts/Paises.js")"></script>
+

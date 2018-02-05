@@ -1,0 +1,50 @@
+﻿@model MVCSAC.Models.Chamado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Chamado</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TITChamado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TITChamado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DESCChamado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DESCChamado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DTChamado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DTChamado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SITChamado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SITChamado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CHUsu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CHUsu)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CHChamado }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

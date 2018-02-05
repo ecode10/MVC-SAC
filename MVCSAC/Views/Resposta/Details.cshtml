@@ -1,0 +1,73 @@
+﻿@model IEnumerable<MVCSAC.Models.Resposta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Respostas do Chamado</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DTRes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHUsu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHChamado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DTRes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHUsu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHChamado)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.CHRes }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CHRes }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CHRes })*@
+
+            @{
+                if (Session["PerfilUsu"]!=null && Session["PerfilUsu"].Equals("A")){
+                    @Html.ActionLink("Back", "../Chamado/All")
+                }
+                else{
+                    @Html.ActionLink("Back", "../Chamado")
+                }
+            }
+        </td>
+    </tr>
+}
+
+    <tr>
+        <td>
+            <br /><br />
+            @{
+                if (Session["PerfilUsu"]!=null && Session["PerfilUsu"].Equals("A")){
+                    @Html.ActionLink("Back to list", "../Chamado/All")
+                }
+                else{
+                    @Html.ActionLink("Back to list", "../Chamado")
+                }
+            }
+        </td>
+    </tr>
+</table>

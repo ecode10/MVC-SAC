@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#CHPais").change(function () {
+            var idModel = $(this).val();
+            $.getJSON("/Cascade/SearchEstado", { id: idModel },
+                    function (carData) {
+                        var select = $("#CHEstado");
+                        select.empty();
+                        select.append($('<option/>', {
+                            value: 0,
+                            text: "Selecione um Estado"
+                        }));
+                        $.each(carData, function (index, itemData) {
+
+                            select.append($('<option/>', {
+                                value: itemData.Value,
+                                text: itemData.Text
+                            }));
+                        });
+                    });
+                });
+                $("#CHEstado").change(function () {
+                    var idColour = $(this).val();
+                    $.getJSON("/Cascade/SearchCidade", { id: idColour },
+                    function (modelData) {
+                        var select = $("#CHCidade");
+                        select.empty();
+                        select.append($('<option/>', {
+                            value: 0,
+                            text: "Selecione uma Cidade"
+                        }));
+                        $.each(modelData, function (index, itemData) {
+
+                            select.append($('<option/>', {
+                                value: itemData.Value,
+                                text: itemData.Text
+                            }));
+                        });
+                    });
+                });
+    });
+
+</script>
+
+<p>
+País
+@Html.DropDownList("Pais", ViewBag.cmbPaises as SelectList,
+        "Selecione um pais", new { id = "CHPais" })
+
+</p>
+
+<p>
+Estado
+@Html.DropDownList("Estado", new SelectList(Enumerable.Empty<SelectListItem>(), "CHEstado", "NOEstado"),
+        "Selecione um estado", new { id = "CHEstado" })
+</p>
+
+<p>
+Cidade
+@Html.DropDownList("Cidade", new SelectList(Enumerable.Empty<SelectListItem>(), "CHCidade", "NOCidade"),
+        "Selecione uma cidade", new { id = "CHCidade" })
+</p>

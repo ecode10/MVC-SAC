@@ -1,0 +1,43 @@
+﻿@model MVCSAC.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Usuario</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NOUsu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NOUsu)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EMUsu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EMUsu)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DTNascUsu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DTNascUsu)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CHSite)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CHSite)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CHUsu }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

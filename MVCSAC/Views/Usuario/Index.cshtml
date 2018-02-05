@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MVCSAC.Models.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOUsu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMUsu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DTNascUsu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHSite)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOUsu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMUsu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DTNascUsu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHSite)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CHUsu }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CHUsu }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CHUsu })
+        </td>
+    </tr>
+}
+
+</table>

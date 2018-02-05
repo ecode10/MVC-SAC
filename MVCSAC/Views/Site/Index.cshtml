@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MVCSAC.Models.Site>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOSite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SITSite)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOSite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SITSite)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CHSite }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CHSite }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CHSite })
+        </td>
+    </tr>
+}
+
+</table>

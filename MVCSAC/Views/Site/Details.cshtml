@@ -1,0 +1,29 @@
+﻿@model MVCSAC.Models.Site
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Site</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NOSite)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NOSite)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SITSite)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SITSite)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CHSite }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

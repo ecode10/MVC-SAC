@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MVCSAC.Models.Chamado>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TITChamado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCChamado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DTChamado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SITChamado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TITChamado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCChamado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DTChamado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SITChamado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CHChamado }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CHChamado }) |
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.CHChamado }) |*@
+
+            @Html.ActionLink("Respostas", "../Resposta/Details", new {id=item.CHChamado})
+            @Html.ActionLink("Responder", "../Resposta/Create", new {id=item.CHChamado})
+        </td>
+    </tr>
+}
+
+</table>

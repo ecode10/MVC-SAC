@@ -1,0 +1,46 @@
+﻿@model MVCSAC.Models.Usuario
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Usuario</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NOUsu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NOUsu)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EMUsu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EMUsu)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DTNascUsu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DTNascUsu)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CHSite)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CHSite)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
